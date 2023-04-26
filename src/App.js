@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Products from "./components/Products";
+import Cart from "./components/Cart";
 
 function App() {
   return (
@@ -11,8 +12,8 @@ function App() {
           <div className="col-md-7">
             <Products />
           </div>
-
           <div className="col-md-5">
+            <Cart />
           </div>
         </div>
       </div>
