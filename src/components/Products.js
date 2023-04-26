@@ -1,6 +1,6 @@
 
 import { useContext } from "react";
-// import ProductsData from "../assets/productsData";
+import ProductsData from "../assets/productsData";
 import { CartContext } from "../store";
 
 export default function Products() {
@@ -49,7 +49,7 @@ export default function Products() {
                                     onClick={() => {
                                         dispatch({
                                             type: 'ADD_TO_CART',
-                                            payload: { ...product, quantity: 1 }
+                                            payload: { ...product}
                                         })
                                     }}>
                                     加入購物車

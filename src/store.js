@@ -23,7 +23,7 @@ export const cartReducer = (state, action) => {
     // 取得當前購物車的目標品項索引
     const index = cartList.findIndex((item) => item.id === action.payload.id)
 
-    // console.log('productList: ',productList)
+    console.log('productList: ',productList)
     // 
     // const productIndex = 
 
@@ -65,12 +65,12 @@ export const cartReducer = (state, action) => {
             };
         
         case "UPDATE_PRODUCT_QUANTITY":
-            console.log(state)
 
-           const res=  state.productList.find((product) => product.id === action.payload.id)
-            console.log(res)
+            state.productList.find((product) => product.id === action.payload.id).quantity = action.payload.quantity
+            state.productList.find((product) => product.id === action.payload.id).quantity = action.payload.quantity
+
             return {
-                ...state
+                ...state,
             }
 
         default:
