@@ -16,9 +16,13 @@ export const cartInit = {
 
 export const cartReducer = (state, action) => {
 
-    const cartList = [...state.cartList]
+    // const cartList = [...state.cartList]
+    const cartList = JSON.parse(JSON.stringify(state.cartList))
 
-    const productList = [...state.productList]
+
+    // const productList = [...state.productList]
+    const productList = JSON.parse(JSON.stringify(state.productList))
+
 
     // 取得當前購物車的目標品項索引
     const index = cartList.findIndex((item) => item.id === action.payload.id)
