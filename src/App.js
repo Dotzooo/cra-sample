@@ -5,32 +5,15 @@ import Navbar from "./components/Navbar";
 import Products from "./components/Products";
 import Cart from "./components/Cart";
 
-import { CartContext } from "./store";
+import { CartContext, cartReducer, cartInit } from "./store";
 
 
 
 function App() {
-  const cartReducer = useReducer((state, action) => {
-
-    const cartList = [...state.cartList]
-
-    console.log(action)
-    switch (action.type) {
-      // 新增商品至購物車
-      case "ADD_TO_CART":
-        cartList.push(action.payload)
-        return {
-          ...state,
-          cartList
-        };
-      default: 
-        return state
-    }
-   }, {
-    cartList: []
-  })
+  const reducer = useReducer(cartReducer, cartInit)
+  
   return (
-    <CartContext.Provider value={cartReducer}>
+    <CartContext.Provider value={reducer}>
       <Navbar />
       <div className="container mt-5">
         {/** */}
@@ -47,4 +30,6 @@ function App() {
   );
 }
 
+
 export default App;
+

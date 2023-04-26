@@ -7,6 +7,7 @@ const ProductsData = [
     price: 120,
 
     title: "鮮果優格餐",
+    quantity: 1,
   },
 
   {
@@ -17,6 +18,7 @@ const ProductsData = [
     price: 210,
 
     title: "全蔬食健康餐",
+    quantity: 1,
   },
 
   {
@@ -27,6 +29,7 @@ const ProductsData = [
     price: 369,
 
     title: "酒蒸蛤蠣",
+    quantity: 1,
   },
 
   {
@@ -37,6 +40,7 @@ const ProductsData = [
     price: 300,
 
     title: "綜合特調果汁",
+    quantity: 1,
   },
 
   {
@@ -47,6 +51,7 @@ const ProductsData = [
     price: 999,
 
     title: "巧克力蛋糕",
+    quantity: 1,
   },
 
   {
@@ -57,6 +62,7 @@ const ProductsData = [
     price: 85,
 
     title: "德式黑森林蛋糕",
+    quantity: 1,
   },
 
   {
@@ -67,6 +73,7 @@ const ProductsData = [
     price: 250,
 
     title: "千層奶油酥派",
+    quantity: 1,
   },
 
   {
@@ -77,6 +84,7 @@ const ProductsData = [
     price: 130,
 
     title: "香草榛果蛋糕",
+    quantity: 1,
   },
 
   {
@@ -87,6 +95,7 @@ const ProductsData = [
     price: 77,
 
     title: "巧克力杯子蛋糕",
+    quantity: 1,
   },
 
   {
@@ -97,8 +106,8 @@ const ProductsData = [
     price: 899,
 
     title: "串燒組合",
+    quantity: 1,
   },
 ];
-
 
 export default ProductsData;
