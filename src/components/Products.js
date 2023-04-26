@@ -1,6 +1,12 @@
+
+import { useContext } from "react";
 import ProductsData from "../assets/productsData";
+import { CartContext } from "../store";
 
 export default function Products() {
+
+const [state, dispatch] = useContext(CartContext);
+
   return (
     <div className="row row-cols-3 g-3">
       {ProductsData.map((product) => {
@@ -18,7 +24,13 @@ export default function Products() {
                   <span className="float-end">NT$ {product.price}</span>
                 </h6>
                 <p className="card-text"></p>
-                <button type="button" className="btn btn-outline-primary w-100">
+                        <button type="button" className="btn btn-outline-primary w-100"
+                            onClick={() => { 
+                                dispatch({
+                                    type: 'ADD_TO_CART',
+                                    payload:  {...product, quantity: 1}
+                                })
+                            }}>
                   加入購物車
                 </button>
               </div>
