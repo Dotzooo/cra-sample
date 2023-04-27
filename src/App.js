@@ -1,9 +1,14 @@
 
 import { useReducer } from "react";
 
+import { Routes, Route } from 'react-router-dom';
+
 import Navbar from "./components/Navbar";
-import Products from "./components/Products";
-import Cart from "./components/Cart";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import AlbumLayout from "./pages/AlbumLayout";
+import AlbumIndex from "./pages/AlbumIndex";
 
 import { CartContext, cartReducer, cartInit } from "./store";
 
@@ -14,18 +19,18 @@ function App() {
   
   return (
     <CartContext.Provider value={reducer}>
+
       <Navbar />
       <div className="container mt-5">
-        {/** */}
-        <div className="row row-cols-3">
-          <div className="col-md-7">
-            <Products />
-          </div>
-          <div className="col-md-5">
-            <Cart />
-          </div>
-        </div>
+            <Routes>
+              <Route path='/' element={<Home></Home>}></Route>
+              <Route path='/about' element={<About></About>}></Route>
+              <Route path='/album' element={<AlbumLayout />}>
+                <Route index element={<AlbumIndex />}></Route>
+              </Route>
+            </Routes>
       </div>
+    
     </CartContext.Provider>
   );
 }
