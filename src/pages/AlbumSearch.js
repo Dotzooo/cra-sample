@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 
 import axios from "axios";
 
@@ -11,15 +11,24 @@ export default function AlbumSearch() {
 
     const [search, setSearch] = useState('');
     const [list, setList] = useState([]);
+    
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    useEffect(() => {
+        // console.log(searchParams.get('query')) // 取出
+        // setSearchParams({ query: 'animal'   })  // 寫入
+        setSearch(searchParams.get('query'))
+    }, [searchParams])
 
 
 
     useEffect(() => {
+        if (search !== '') {
         (async () => {
             const res = await axios.get(`${api}?client_id=${accessId}&query=${search}`)
             const { results } = res.data
             setList(results)
-        })()
+        })()}
     }, [search]);
 
 
@@ -30,7 +39,8 @@ export default function AlbumSearch() {
                 defaultValue={search}
                 onKeyUp={(e) => {
                     if (e.code === 'Enter') {
-                        setSearch(e.target.value)
+                        // setSearch(e.target.value)
+                        setSearchParams({query: e.target.value})
                     }
                 }}
             ></input>
