@@ -1,6 +1,6 @@
 import { useContext } from "react"
 
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 
 import { CartContext } from "../store"
@@ -17,13 +17,13 @@ export default function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link" to='/'>HOME</Link>
+                            <NavLink className="nav-link" to='/'>HOME</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to='/about'>ABOUT</Link>
+                            <NavLink className="nav-link" to='/about'>ABOUT</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to='album'>ALBUM</Link>
+                            <NavLink className="nav-link" to='album'>ALBUM</NavLink>
                         </li>
                         <li className="nav-item ml-auto">
                             <button type="submit" className="btn btn-primary position-relative">
