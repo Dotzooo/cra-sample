@@ -1,6 +1,6 @@
 
 import { useParams } from "react-router-dom"
-
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -16,6 +16,8 @@ export default function AlbumPhoto() {
     // console.log(id)
     const [photo, setPhoto] = useState({})
 
+    const navigate = useNavigate()
+
     useEffect(() => { return () => {
             (async () => {
                 const res = await axios.get(`${api}/${id}?client_id=${accessId}`)
@@ -26,6 +28,9 @@ export default function AlbumPhoto() {
     }, [id]);
     return (
         <>
+            <button type="button" className="btn" onClick={() => {
+                navigate(-1)
+            }}>回到上一頁</button>
             <p>{photo.description}</p>
             <img src={photo?.urls?.small} alt={photo.description} className="img-fluid"></img>
         </>

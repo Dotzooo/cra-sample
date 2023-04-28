@@ -10,6 +10,7 @@ import About from "./pages/About";
 import AlbumLayout from "./pages/AlbumLayout";
 import AlbumIndex from "./pages/AlbumIndex";
 import AlbumPhoto from "./pages/AlbumPhoto";
+import NotFound from "./pages/NotFound";
 
 import { CartContext, cartReducer, cartInit } from "./store";
 import AlbumSearch from "./pages/AlbumSearch";
@@ -32,6 +33,7 @@ function App() {
                 <Route path="search" element={<AlbumSearch />}></Route>
                 <Route path=":id" element={<AlbumPhoto />}></Route>
               </Route>
+              <Route path='*' element={<NotFound></NotFound>}></Route>
             </Routes>
       </div>
     
